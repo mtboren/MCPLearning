@@ -71,6 +71,18 @@ python main.py
 
 ## Usage
 
+## Start in Dev Mode
+Launch the app and start MCP inspector:
+```bash
+## if local
+mcp dev mcp_server.py
+
+## or, if in GitHub Codespaces (after having made forwarded proxy port (6277) public in Codespace):
+ALLOWED_ORIGINS="https://${CODESPACE_NAME}-6274.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}" mcp dev mcp_server.py
+```
+
+If using GitHub Codespaces for development and MCP Inspector, see section in [../ReadMe.md](../ReadMe.md) for more information about Inspector configuration (like exposing Codespace port and setting `Inspector Proxy Address` value in Inspector web interface)
+
 ### Basic Interaction
 
 Simply type your message and press Enter to chat with the model.
