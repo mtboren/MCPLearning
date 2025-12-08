@@ -1,11 +1,18 @@
 {
     "name": "MCPLearning Dev Container",
     "image": "mcr.microsoft.com/devcontainers/python:latest",
+    "features": {
+        // install Node.js
+        "ghcr.io/devcontainers/features/node:1": {"version": "latest"}
+    },
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python"
-            ]
+            ],
+            "settings": {
+                "editor.wordWrap": "on"
+            }
         }
     },
     "postCreateCommand": "python -m pip install --upgrade pip uv || true"
