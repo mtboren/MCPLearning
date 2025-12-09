@@ -21,7 +21,7 @@ To succeed with using MCP Inspector web UI in a GitHub Codespaces container, Mat
 - Allow the public (non-local) web-based origin of the MCP proxy (codespace-name-6277.app.github.dev, for example) to access the MCP server; do so by prefixing the `mcp dev ...` command with a temporary environment variable `ALLOWED_ORIGINS`
     - Example command (all one line) to set this env var and to start the MCP server (uses the current Codespace name and port-forwarding domain):
         ```bash
-        ALLOWED_ORIGINS="https://${CODESPACE_NAME}-6274.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}" mcp dev mcp_server.py
+        ALLOWED_ORIGINS="https://${CODESPACE_NAME}-6274.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}" uv run mcp dev ./mcp_server.py
         ```
 - Make MCP proxy server port accessible (change port "visibility" in the Codespace container):  change the visibility of the forwarded port for the proxy (default `6277`) to `public` (in the `PORTS` tab of the VS Code's Terminal pane)
 - Set the `Inspector Proxy Address` value in the Inspector Web UI to the actual value of the address of the Codespace's forwarded port (can find this in the aforementioned `PORTS` tab); ex: `https://my-cool-codespace-46w694q65rc5g69-6277.app.github.dev`
